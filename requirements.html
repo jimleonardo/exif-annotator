@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXIF Annotator - Business Requirements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .requirement {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        .technical-spec {
+            background-color: #f0f4f8;
+            padding: 10px;
+            margin: 5px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>EXIF Annotator - Business Requirements</h1>
+
+    <h2>1. Core Purpose</h2>
+    <div class="requirement">
+        Create a Python-based application that processes digital photographs by adding EXIF metadata directly onto the image in a visually appealing border format.
+    </div>
+
+    <h2>2. Image Processing Requirements</h2>
+    <div class="requirement">
+        <h3>2.1 Input Processing</h3>
+        <ul>
+            <li>Accept JPG image files as input</li>
+            <li>Read and extract EXIF metadata from input images</li>
+            <li>Handle cases where EXIF data is missing or incomplete</li>
+            <li>Support Unicode filenames</li>
+        </ul>
+
+        <h3>2.2 Image Modification</h3>
+        <ul>
+            <li>Add a black border to the bottom of the image</li>
+            <li>Border height: 110 pixels</li>
+            <li>Preserve original image quality and dimensions</li>
+            <li>Maintain original image metadata in the output file</li>
+        </ul>
+    </div>
+
+    <h2>3. EXIF Data Display Requirements</h2>
+    <div class="requirement">
+        <h3>3.1 Text Format</h3>
+        <ul>
+            <li>Display EXIF data in two lines within the border</li>
+            <li>Use Arial font at 32pt size</li>
+            <li>White text on black background for maximum readability</li>
+        </ul>
+
+        <h3>3.2 Data Layout</h3>
+        <div class="technical-spec">
+            Line 1 (at 30% of border height): Date/Time, Camera Model, Lens Model<br>
+            Line 2 (at 70% of border height): Focal Length, F-Stop, Shutter Speed, ISO
+        </div>
+
+        <h3>3.3 Missing Data Handling</h3>
+        <ul>
+            <li>Display "N/A" for any missing EXIF fields</li>
+            <li>Maintain consistent formatting regardless of missing data</li>
+        </ul>
+    </div>
+
+    <h2>4. Technical Requirements</h2>
+    <div class="requirement">
+        <h3>4.1 Development Standards</h3>
+        <ul>
+            <li>Implement in Python using Pillow for image processing</li>
+            <li>Use exif library for metadata extraction</li>
+            <li>Follow PEP 8 coding standards</li>
+            <li>Implement comprehensive pytest test suite</li>
+        </ul>
+
+        <h3>4.2 Project Structure</h3>
+        <ul>
+            <li>Maintain clear project organization</li>
+            <li>Include proper documentation (README.md)</li>
+            <li>Provide test coverage for all major functions</li>
+            <li>Include sample images for testing</li>
+        </ul>
+    </div>
+
+    <h2>5. Performance Requirements</h2>
+    <div class="requirement">
+        <ul>
+            <li>Process individual images efficiently</li>
+            <li>Support batch processing of multiple images</li>
+            <li>Maintain original image quality</li>
+            <li>Handle various image sizes and resolutions</li>
+        </ul>
+    </div>
+
+    <h2>6. Documentation Requirements</h2>
+    <div class="requirement">
+        <ul>
+            <li>Provide clear installation instructions</li>
+            <li>Include usage examples and documentation</li>
+            <li>Document all dependencies and versions</li>
+            <li>Maintain testing documentation</li>
+        </ul>
+    </div>
+
+</body>
+</html> 
